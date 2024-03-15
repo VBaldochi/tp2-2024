@@ -51,10 +51,10 @@ public class Principal {
             System.out.print(valor + " ");
         }
 
-        System.out.println("\nUnião:");
-        for (int valor : uniao) {
-            System.out.print(valor + " ");
-        }
+       // System.out.println("\nUnião:");
+        //for (int valor : uniao) {
+          //  System.out.print(valor + " ");
+        //}
 
         scanner.close();
     }
@@ -121,3 +121,4 @@ public class Principal {
         // Retornar a interseção com o tamanho correto
         return Arrays.copyOf(intersecao, count);
     }
+}
