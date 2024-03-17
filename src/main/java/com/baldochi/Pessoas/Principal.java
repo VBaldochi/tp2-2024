@@ -4,11 +4,12 @@ public class Principal {
 
     public static void main(String[] args) {
 
-        Pessoa p = new Pessoa();
+        /*Pessoa p = new Pessoa();
         p.setNome("João");
         p.setEmail("joao@joao.com.br");
+        */
 
-        System.out.println(p);
+        //System.out.println(p);
 
         PessoaJuridica pj = new PessoaJuridica();
         pj.setNome("João");
@@ -25,7 +26,7 @@ public class Principal {
         System.out.println(pf);
 
         cadastrarPessoa(pj);
-        cadastrarPessoa(p);
+        //cadastrarPessoa(p);
         cadastrarPessoa(pf);
     }
 

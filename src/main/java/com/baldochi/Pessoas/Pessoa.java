@@ -1,9 +1,11 @@
 package com.baldochi.Pessoas;
 
-public class Pessoa {
+public abstract class Pessoa {
 
     protected String nome;
     protected String email;
+
+   // public abstract void acao();
 
     public String getEmail() {
         return email;
