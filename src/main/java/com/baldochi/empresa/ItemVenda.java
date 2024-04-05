@@ -6,12 +6,7 @@ public class ItemVenda {
    // private double totalItem;
     private Produto produto;
 
-    public ItemVenda(int codigo, int quantidade, Produto produto) {
-        this.codigo = codigo;
-        this.quantidade = quantidade;
-        this.produto = produto;
-       // this.totalItem = calcularTotalItem();
-    }
+
 
     public int getCodigo() {
         return codigo;
@@ -33,6 +28,19 @@ public class ItemVenda {
     public Produto getProduto() {
         return produto;
     }
+
+    public void setCodigo(int i) {
+        this.codigo = i;
+    }
+
+    public void setQuantidadeVendida(int i) {
+        this.quantidade = i;
+    }
+
+    public void setProduto(Produto produto) {
+        this.produto = produto;
+    }
+
 
 //    private double calcularTotalItem() {
 //        return quantidade * produto.getValorUnitario();

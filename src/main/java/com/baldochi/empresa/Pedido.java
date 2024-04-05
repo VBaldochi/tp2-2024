@@ -3,9 +3,31 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Pedido {
-    private int codigo;
-    private Cliente cliente;
     private String tipoVenda;
+
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+
+    public void setCliente(String cliente) {
+        this.cliente = cliente;
+    }
+
+    public void setTipoVenda(String tipoVenda) {
+        this.tipoVenda = tipoVenda;
+    }
+
+    public void setItensVenda(List<ItemVenda> itensVenda) {
+        this.itensVenda = itensVenda;
+    }
+
+    private int codigo;
+    private String cliente;
+    private enum tipoVendaEnum {
+        AAA,
+        BBB,
+        CCC
+    };
     private List<ItemVenda> itensVenda;
 
     public static Pedido gerarPedido() {
@@ -14,27 +36,30 @@ public class Pedido {
         int idAleatorio = (int) (Math.random() * 100);
 
         novoPedido.setCliente("Cliente " + idAleatorio);
-        novoPedido.setTipoVenda(TipoVendaEnum.AAA);
+        novoPedido.setTipoVenda(String.valueOf(TipoVendaEnum.AAA));
         novoPedido.setCodigo(idAleatorio);
 
-        List<ItemPedido> itensPedidos = new ArrayList<ItemPedido>();
+        List<ItemVenda> itensPedidos = new ArrayList<ItemVenda>();
 
-        int quantidadeItens = (int) (Math.random() * 5) + 1;
+        int quantidadeItens = (int) (Math.random() * 10);
 
+        for (int i = 0; i < quantidadeItens; i++) {
+            ItemVenda item = new ItemVenda();
+            item.setCodigo(i);
+            item.setQuantidadeVendida(i + 1);
+            item.setProduto(Produto.gerarDadosProduto());
+            itensPedidos.add(item);
+        }
+        novoPedido.setItensVenda(itensPedidos);
+        return novoPedido;
     }
 
-    public Pedido(int codigo, Cliente cliente, String tipoVenda) {
-        this.codigo = codigo;
-        this.cliente = cliente;
-        this.tipoVenda = tipoVenda;
-        this.itensVenda = new ArrayList<>();
-    }
 
     public int getCodigo() {
         return codigo;
     }
 
-    public Cliente getCliente() {
+    public String getCliente() {
         return cliente;
     }
 
@@ -59,16 +84,3 @@ public class Pedido {
         return total;
     }
 }
-
-//    public static Pedido gerarDadosPedido(List<Produto> produtos) {
-//        // Implementar lógica para gerar dados aleatórios de um pedido com lista de itens variável
-//        int numItens = (int) (Math.random() * 5) + 1;
-//        List<ItemVenda> itens = new ArrayList<>();
-//        for (int i = 0; i < numItens; i++) {
-//            int quantidade = (int) (Math.random() * 10) + 1;
-//            Produto produto = produtos.get((int) (Math.random() * produtos.size()));
-//            itens.add(new ItemVenda(i, quantidade, produto));
-//        }
-//        return new Pedido(
-//                (int) (Math.random() * 1000),
-//                new Cliente((int) (Math.random() * 100), "Cliente " + (int) (Math.random

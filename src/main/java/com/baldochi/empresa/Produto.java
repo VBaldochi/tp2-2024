@@ -43,4 +43,7 @@ public class Produto {
     }
 
 
+    public Object getNome() {
+        return toString();
+    }
 }
