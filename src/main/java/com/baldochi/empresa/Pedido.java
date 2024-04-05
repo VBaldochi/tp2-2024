@@ -8,6 +8,21 @@ public class Pedido {
     private String tipoVenda;
     private List<ItemVenda> itensVenda;
 
+    public static Pedido gerarPedido() {
+        Pedido novoPedido = new Pedido();
+
+        int idAleatorio = (int) (Math.random() * 100);
+
+        novoPedido.setCliente("Cliente " + idAleatorio);
+        novoPedido.setTipoVenda(TipoVendaEnum.AAA);
+        novoPedido.setCodigo(idAleatorio);
+
+        List<ItemPedido> itensPedidos = new ArrayList<ItemPedido>();
+
+        int quantidadeItens = (int) (Math.random() * 5) + 1;
+
+    }
+
     public Pedido(int codigo, Cliente cliente, String tipoVenda) {
         this.codigo = codigo;
         this.cliente = cliente;
