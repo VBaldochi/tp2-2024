@@ -1,26 +1,10 @@
 package com.baldochi.empresa;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Pedido {
     private String tipoVenda;
-
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
-    }
-
-    public void setCliente(String cliente) {
-        this.cliente = cliente;
-    }
-
-    public void setTipoVenda(String tipoVenda) {
-        this.tipoVenda = tipoVenda;
-    }
-
-    public void setItensVenda(List<ItemVenda> itensVenda) {
-        this.itensVenda = itensVenda;
-    }
-
     private int codigo;
     private String cliente;
     private enum tipoVendaEnum {
@@ -29,6 +13,14 @@ public class Pedido {
         CCC
     };
     private List<ItemVenda> itensVenda;
+
+    public Double getValorTotalVenda() {
+        Double totalVenda = 0D;
+        for (ItemVenda item : itensVenda) {
+            totalVenda += item.getQuantidadeVendida();
+        }
+        return totalVenda;
+    }
 
     public static Pedido gerarPedido() {
         Pedido novoPedido = new Pedido();
@@ -54,6 +46,34 @@ public class Pedido {
         return novoPedido;
     }
 
+    public void adicionarItem(ItemVenda item) {
+        itensVenda.add(item);
+    }
+
+    public int getQuantidadeTotalVendida() {
+        int total = 0;
+        for (ItemVenda item : itensVenda) {
+            total += item.getQuantidade();
+        }
+        return total;
+    }
+
+    // Getters and Setters
+    public void setCodigo(int codigo) {
+        this.codigo = codigo;
+    }
+
+    public void setCliente(String cliente) {
+        this.cliente = cliente;
+    }
+
+    public void setTipoVenda(String tipoVenda) {
+        this.tipoVenda = tipoVenda;
+    }
+
+    public void setItensVenda(List<ItemVenda> itensVenda) {
+        this.itensVenda = itensVenda;
+    }
 
     public int getCodigo() {
         return codigo;
@@ -69,18 +89,5 @@ public class Pedido {
 
     public List<ItemVenda> getItensVenda() {
         return itensVenda;
-    }
-
-    public void adicionarItem(ItemVenda item) {
-        itensVenda.add(item);
-    }
-
-
-    public int getQuantidadeTotalVendida() {
-        int total = 0;
-        for (ItemVenda item : itensVenda) {
-            total += item.getQuantidade();
-        }
-        return total;
     }
 }

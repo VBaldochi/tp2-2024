@@ -3,7 +3,7 @@ package com.baldochi.empresa;
 public class ItemVenda {
     private int codigo;
     private int quantidade;
-   // private double totalItem;
+    private double totalItem;
     private Produto produto;
 
 
@@ -42,7 +42,11 @@ public class ItemVenda {
     }
 
 
-//    private double calcularTotalItem() {
-//        return quantidade * produto.getValorUnitario();
-//    }
+    private double calcularTotalItem() {
+        return quantidade * produto.getValorUnitario();
+    }
+
+    public Double getQuantidadeVendida() {
+        return (double) quantidade;
+    }
 }

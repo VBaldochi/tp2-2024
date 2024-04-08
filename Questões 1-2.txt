@@ -1,0 +1,34 @@
+1. Qual a diferença entre Métodos de Objetos e Métodos de Classes (métodos
+estáticos)?
+
+Métodos de Objetos:
+
+    São métodos que pertencem a um objeto específico.
+    Para acessá-los, é necessário ter uma instância do objeto.
+    São usados para realizar operações específicas com o estado do objeto.
+    Podem acessar e modificar os atributos do objeto.
+
+Métodos de Classes (Estáticos):
+
+    São métodos que pertencem à classe como um todo.
+    Não precisam de uma instância da classe para serem acessados.
+    São usados para realizar operações que não dependem do estado de um objeto específico.
+    Não podem acessar ou modificar diretamente os atributos de um objeto.
+
+
+
+4. Código Bird e Nightingale
+
+a. Saída do método main:
+
+mathematica
+
+Before: 0 After: 1Flap Flap:0
+
+Justificativa: referenceCount é incrementado no construtor de Nightingale, que é chamado antes do segundo print. a não é inicializado, então seu valor padrão é 0.
+
+b. Quantas instâncias da variável Count e a:
+
+Uma única instância de referenceCount será criada e compartilhada entre todas as instâncias de Bird e Nightingale porque é uma variável static.
+
+Cada objeto Bird e Nightingale terá sua própria cópia da variável de instância a, resultando em 15 instâncias dessa variável (uma para cada objeto criado). 
