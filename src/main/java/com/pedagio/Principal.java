@@ -1,8 +1,6 @@
 package com.pedagio;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.*;
+import java.util.List;
 
 public class Principal {
 
@@ -36,9 +34,9 @@ public class Principal {
         // Consultar total por tag
         consultarTotalPorTag("13579");
         consultarTotalPorTag("44444");
-//
-//        // Consultar passagens por tag e data
-//        consultarPassagensPorTagEData("13579", "2023-11-14");
+
+        // Consultar passagens por tag e data
+        consultarPassagensPorTagEData("13579", "2023-11-14");
     }
 
     private static void consultarTotalPorTag(String tag) {
@@ -47,13 +45,13 @@ public class Principal {
         Double total = fatura.getValorTotalTag(tag);
         System.out.println("Total: " + total);
     }
-//
-//    private static void consultarPassagensPorTagEData(String tag, String data) {
-//        System.out.println("\n================== Consulta Passagens por Tag e Data: " + tag + " - " + data + " ==================");
-//        Fatura fatura = new Fatura();
-//        List<Passagem> passagens = fatura.getPassagensPorTagEData(tag, data);
-//        for (Passagem passagem : passagens) {
-//            System.out.println(passagem);
-//        }
-//    }
+
+    private static void consultarPassagensPorTagEData(String tag, String data) {
+        System.out.println("\n================== Consulta Passagens por Tag e Data: " + tag + " - " + data + " ==================");
+        Fatura fatura = new Fatura();
+        List<Passagem> passagens = fatura.getPassagensPorTagEData(tag, data);
+        for (Passagem passagem : passagens) {
+            System.out.println(passagem);
+        }
+    }
 }

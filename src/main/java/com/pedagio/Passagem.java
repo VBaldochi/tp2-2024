@@ -7,7 +7,7 @@ public class Passagem {
     private String praca;
     private Double valor;
 
-    public Passagem (String tag, String horaDate, String placa, String praca, Double valor) {
+    public Passagem(String tag, String horaDate, String placa, String praca, Double valor) {
         this.tag = tag;
         this.horaDate = horaDate;
         this.placa = placa;

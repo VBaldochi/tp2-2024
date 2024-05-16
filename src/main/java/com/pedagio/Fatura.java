@@ -2,12 +2,15 @@ package com.pedagio;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Fatura implements PassagemObserver {
 
-    private Map<String, Map<String, List<Passagem>>> passagensPorTagData = new HashMap<>();
-    private Map<String, Double> tarifasTag = new HashMap<>();
+    private final Map<String, Map<String, List<Passagem>>> passagensPorTagData = new HashMap<>();
+    private final Map<String, Double> tarifasTag = new HashMap<>();
 
     public Fatura() {
     }

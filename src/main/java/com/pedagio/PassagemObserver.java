@@ -1,5 +1,5 @@
 package com.pedagio;
 
-public interface PassagemObserver extends Observer{
-    public void processarPassagem(Passagem passagem);
+public interface PassagemObserver extends Observer {
+    void processarPassagem(Passagem passagem);
 }

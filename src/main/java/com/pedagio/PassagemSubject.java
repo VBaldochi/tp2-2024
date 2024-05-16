@@ -5,7 +5,7 @@ import java.util.List;
 
 public class PassagemSubject implements Subject {
 
-    private List<Observer> observerList = new ArrayList<Observer>();
+    private final List<Observer> observerList = new ArrayList<Observer>();
 
     private Passagem newPassagem;
 
@@ -22,8 +22,7 @@ public class PassagemSubject implements Subject {
     @Override
     public void notifyObservers() {
         for (Observer o : this.observerList) {
-            if (o instanceof PassagemObserver) {
-                PassagemObserver passagemObserver = (PassagemObserver) o;
+            if (o instanceof PassagemObserver passagemObserver) {
                 passagemObserver.processarPassagem(newPassagem);
             }
         }
